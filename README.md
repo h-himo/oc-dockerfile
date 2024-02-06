@@ -12,12 +12,10 @@ Sample :
 To build a sample image.
 ```
 docker build . -t opensourcecobol/opensource-cobol-almalinux9
-wget -O src/HELLO.cbl https://raw.githubusercontent.com/opensourcecobol/oc-dockerfile/master/HELLO.cbl
-docker run --rm -it -v `pwd`/src:/oscobol/src:ro --name oscobol opensourcecobol/opensource-cobol-almalinux9
+docker run -itd -v /c/Develop/share:/root/share --name oc152alma opensourcecobol/opensource-cobol-almalinux9
 ```
 
 in docker container
-
 ```
 cobc src/HELLO.cbl
 cobcrun HELLO
