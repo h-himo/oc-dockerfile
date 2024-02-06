@@ -23,7 +23,10 @@ FROM almalinux:9
 LABEL maintainer="himo@tsh-world.co.jp"
 
 # install yum package
-RUN yum install -y gcc gcc-devel gcc-c++ make bison flex gmp-devel ncurses-devel postgresql-devel
+
+RUN yum groupinstall -y "Development tools"
+RUN yum install -y gmp-devel ncurses-devel postgresql-devel
+# RUN yum install -y gmp-devel ncurses-devel
 
 # install opensource COBOL
 ADD https://github.com/opensourcecobol/opensource-cobol/archive/v1.5.2J.tar.gz opensource-cobol-1.5.2J.tar.gz
@@ -38,13 +41,13 @@ RUN tar zxvf opensource-cobol-1.5.2J.tar.gz &&\
     rm -rf opensource-cobol-1.5.2J opensource-cobol-1.5.2J.tar.gz
 
 # install OCESQL
-ADD https://github.com/opensourcecobol/Open-COBOL-ESQL/archive/v1.2.tar.gz Open-COBOL-ESQL-1.2.tar.gz
-RUN tar zxvf Open-COBOL-ESQL-1.2.tar.gz &&\
-    cd /Open-COBOL-ESQL-1.2 &&\
+ADD https://github.com/opensourcecobol/Open-COBOL-ESQL/archive/v1.3.tar.gz Open-COBOL-ESQL-1.3.tar.gz
+RUN tar zxvf Open-COBOL-ESQL-1.3.tar.gz &&\
+    cd /Open-COBOL-ESQL-1.3 &&\
     ./configure --prefix=/usr/ &&\
     make install &&\
     cd / &&\
-    rm -rf Open-COBOL-ESQL-1.2 Open-COBOL-ESQL-1.2.tar.gz
+    rm -rf Open-COBOL-ESQL-1.3 Open-COBOL-ESQL-1.3.tar.gz
 
 WORKDIR /oscobol
 
