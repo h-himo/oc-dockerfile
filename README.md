@@ -1,9 +1,9 @@
 # opensource COBOL for Docker
 
-opensource COBOL and Open COBOL ESQL development environment
+opensource COBOL and Open COBOL ESQL development environment on AlmaLinux
 
 Versions :
-- CentOS: AlmaLinux 9
+- OS: AlmaLinux 9
 - opensource COBOL: 1.5.2J
 - Open COBOL ESQL: 1.3
 
@@ -31,4 +31,4 @@ When you want stop container, follow command:
 docker stop oscobol
 ```
 
-Copyright 2023, Tokyo System House Co., Ltd. <opencobol@tsh-world.co.jp>
+Copyright 2024, Tokyo System House Co., Ltd. <opencobol@tsh-world.co.jp>
