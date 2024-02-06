@@ -19,8 +19,8 @@
 # Open COBOL ESQL  v1.2.0
 #
 
-FROM centos:centos7
-LABEL maintainer="n-isaka@tsh-world.co.jp"
+FROM almalinux:9
+LABEL maintainer="himo@tsh-world.co.jp"
 
 # install yum package
 RUN yum install -y gcc gcc-devel gcc-c++ make bison flex gmp-devel ncurses-devel postgresql-devel
